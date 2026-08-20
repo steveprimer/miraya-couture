@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-sans: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Cinzel", "Playfair Display", Georgia, serif;
+
+  --color-brand-bg: #F7F5F0;
+  --color-brand-dark: #121212;
+  --color-brand-muted: #6B6B6B;
+  --color-brand-border: #E4E0D7;
+  --color-brand-burgundy: #7A1C30;
+  --color-brand-burgundy-dark: #661224;
+  --color-brand-gold: #C5A880;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-brand-bg);
+    color: var(--color-brand-dark);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-brand-bg);
+    color: var(--color-brand-dark);
+    overflow-x: hidden;
+    letter-spacing: 0.02em;
+  }
+
+  ::selection {
+    background-color: #7A1C30;
+    color: #FFFFFF;
+  }
+}
+
+/* Custom Typography Classes */
+.font-editorial-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.font-editorial-title {
+  font-family: var(--font-serif);
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
+.font-caps-tracking {
+  font-family: var(--font-sans);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.mishru-logo {
+  font-family: var(--font-serif);
+  letter-spacing: 0.35em;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+/* Custom Scrollbar for sleek horizontal carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.luxury-scrollbar::-webkit-scrollbar {
+  height: 4px;
+}
+.luxury-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+.luxury-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+}
