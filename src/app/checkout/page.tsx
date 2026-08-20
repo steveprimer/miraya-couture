@@ -63,10 +63,10 @@ export default function CheckoutPage() {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link
             href="/"
-            className="tracking-[0.35em] text-2xl font-light uppercase text-[#121212]"
+            className="tracking-[0.35em] text-2xl font-light uppercase text-[#121212] whitespace-nowrap inline-block select-none"
             style={{ fontFamily: "var(--font-serif)" }}
           >
-            M I S H R U<span className="text-[#7A1C30]">.</span>
+            MIRAYA<span className="text-[#7A1C30]">.</span>
           </Link>
 
           <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-[#121212]/60">

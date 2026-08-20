@@ -4,7 +4,7 @@ import Link from "next/link";
 import { CheckCircle2, Sparkles, ArrowRight, ShieldCheck, Heart } from "lucide-react";
 
 export default function SuccessPage() {
-  const orderRef = `MSH-2026-${Math.floor(1000 + Math.random() * 9000)}`;
+  const orderRef = `MRY-2026-${Math.floor(1000 + Math.random() * 9000)}`;
 
   return (
     <div className="min-h-screen bg-[#F7F5F0] flex flex-col items-center justify-center p-6 text-center text-[#121212] font-sans">
