@@ -11,6 +11,11 @@ export default function CartDrawer() {
   const { isOpen, closeCart, items, removeItem, updateQuantity, getTotalPrice } =
     useCartStore();
   const [isCheckingOut, setIsCheckingOut] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // Lock body scroll when cart is open
   useEffect(() => {
@@ -68,10 +73,11 @@ export default function CartDrawer() {
             <div className="flex items-center gap-3">
               <ShoppingBag className="w-5 h-5 stroke-[1.5]" />
               <h2
+                suppressHydrationWarning
                 className="text-lg font-light tracking-[0.2em] uppercase"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
-                Shopping Bag ({items.length})
+                Shopping Bag ({isMounted ? items.length : 0})
               </h2>
             </div>
             <button

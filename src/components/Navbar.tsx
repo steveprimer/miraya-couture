@@ -11,12 +11,14 @@ export default function Navbar() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isShopHovered, setIsShopHovered] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const totalItems = useCartStore((state) => state.getTotalItems());
   const openCart = useCartStore((state) => state.openCart);
   const { openSearch, isMobileMenuOpen, toggleMobileMenu, closeMobileMenu, openContactModal } =
     useUIStore();
 
   useEffect(() => {
+    setIsMounted(true);
     const handleScroll = () => {
       if (window.scrollY > 40) {
         setIsScrolled(true);
@@ -168,11 +170,12 @@ export default function Navbar() {
           >
             <ShoppingBag className="w-[19px] h-[19px] stroke-[1.5]" />
             <span
+              suppressHydrationWarning
               className={`ml-1 text-[11px] font-medium tracking-tighter ${
                 isScrolled ? "text-[#121212]" : "text-white"
               }`}
             >
-              {totalItems}
+              {isMounted ? totalItems : 0}
             </span>
           </button>
 
