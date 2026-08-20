@@ -21,6 +21,30 @@ export const metadata: Metadata = {
     "Handcrafted Embroidery",
     "Pret",
   ],
+  openGraph: {
+    title: "MIRAYA | Luxury Indian Haute Couture & Bridal",
+    description:
+      "Explore Miraya's signature couture collections, bridal lehengas, and contemporary pret handcrafted with artisanal embroidery and timeless silhouettes.",
+    url: "https://mirayacouture.com",
+    siteName: "MIRAYA Couture",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "MIRAYA | Luxury Indian Haute Couture & Bridal",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MIRAYA | Luxury Indian Haute Couture & Bridal",
+    description:
+      "Explore Miraya's signature couture collections, bridal lehengas, and contemporary pret handcrafted with artisanal embroidery and timeless silhouettes.",
+    images: ["/og-image.jpg"],
+  },
 };
 
 export default function RootLayout({
