@@ -8,8 +8,14 @@ import Footer from "@/components/Footer";
 import { Toaster } from "sonner";
 import NextTopLoader from "nextjs-toploader";
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  process.env.URL ||
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null) ||
+  "https://miraya-couture.netlify.app";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mirayacouture.com"),
+  metadataBase: new URL(siteUrl),
   title: "MIRAYA | Luxury Indian Haute Couture & Bridal",
   description:
     "Explore Miraya's signature couture collections, bridal lehengas, and contemporary pret handcrafted with artisanal embroidery and timeless silhouettes.",
@@ -25,7 +31,7 @@ export const metadata: Metadata = {
     title: "MIRAYA | Luxury Indian Haute Couture & Bridal",
     description:
       "Explore Miraya's signature couture collections, bridal lehengas, and contemporary pret handcrafted with artisanal embroidery and timeless silhouettes.",
-    url: "https://mirayacouture.com",
+    url: siteUrl,
     siteName: "MIRAYA Couture",
     images: [
       {
@@ -65,6 +71,13 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap"
           rel="stylesheet"
         />
+        <meta property="og:image" content={`${siteUrl}/og-image.jpg`} />
+        <meta property="og:image:secure_url" content={`${siteUrl}/og-image.jpg`} />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="MIRAYA | Luxury Indian Haute Couture & Bridal" />
+        <meta name="twitter:image" content={`${siteUrl}/og-image.jpg`} />
       </head>
       <body className="antialiased min-h-screen flex flex-col bg-[#F7F5F0] text-[#121212]">
         <NextTopLoader color="#7A1C30" showSpinner={false} height={2} />
