@@ -53,7 +53,7 @@ export interface AdminCustomer {
 export const INITIAL_ORDERS: AdminOrder[] = [
   {
     id: "ord-1",
-    orderNumber: "MSH-9842",
+    orderNumber: "MRY-9842",
     customerName: "Ananya Birla",
     customerEmail: "ananya.birla@luxury.in",
     customerPhone: "+91 98201 54321",
@@ -81,7 +81,7 @@ export const INITIAL_ORDERS: AdminOrder[] = [
   },
   {
     id: "ord-2",
-    orderNumber: "MSH-9841",
+    orderNumber: "MRY-9841",
     customerName: "Natasha Poonawalla",
     customerEmail: "natasha.p@serum.in",
     customerPhone: "+91 98111 22334",
@@ -109,7 +109,7 @@ export const INITIAL_ORDERS: AdminOrder[] = [
   },
   {
     id: "ord-3",
-    orderNumber: "MSH-9840",
+    orderNumber: "MRY-9840",
     customerName: "Rhea Kapoor",
     customerEmail: "rhea.kapoor@studios.in",
     customerPhone: "+91 98200 99887",
@@ -137,7 +137,7 @@ export const INITIAL_ORDERS: AdminOrder[] = [
   },
   {
     id: "ord-4",
-    orderNumber: "MSH-9839",
+    orderNumber: "MRY-9839",
     customerName: "Radhika Merchant",
     customerEmail: "radhika.m@encore.in",
     customerPhone: "+91 98333 44556",
@@ -165,7 +165,7 @@ export const INITIAL_ORDERS: AdminOrder[] = [
   },
   {
     id: "ord-5",
-    orderNumber: "MSH-9838",
+    orderNumber: "MRY-9838",
     customerName: "Tara Sutaria",
     customerEmail: "tara.sutaria@talents.in",
     customerPhone: "+91 98450 12345",

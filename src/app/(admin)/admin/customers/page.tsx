@@ -56,6 +56,44 @@ export default async function AdminCustomersPage() {
     console.error("Supabase customers error:", err);
   }
 
+  // Fallback to initial VIP clients if DB is empty
+  if (customers.length === 0) {
+    customers = [
+      {
+        email: "ananya.birla@luxury.in",
+        name: "Ananya Birla",
+        phone: "+91 98201 54321",
+        totalOrders: 3,
+        totalSpent: 1250000,
+        lastOrderDate: "18 Aug 2026",
+      },
+      {
+        email: "natasha.p@serum.in",
+        name: "Natasha Poonawalla",
+        phone: "+91 98111 22334",
+        totalOrders: 2,
+        totalSpent: 980000,
+        lastOrderDate: "17 Aug 2026",
+      },
+      {
+        email: "rhea.kapoor@studios.in",
+        name: "Rhea Kapoor",
+        phone: "+91 98200 99887",
+        totalOrders: 2,
+        totalSpent: 750000,
+        lastOrderDate: "15 Aug 2026",
+      },
+      {
+        email: "radhika.m@encore.in",
+        name: "Radhika Merchant",
+        phone: "+91 98333 44556",
+        totalOrders: 1,
+        totalSpent: 245000,
+        lastOrderDate: "19 Aug 2026",
+      },
+    ];
+  }
+
   return (
     <div className="max-w-7xl mx-auto space-y-8">
       {/* Header matching Serene */}

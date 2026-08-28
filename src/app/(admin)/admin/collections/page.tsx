@@ -19,7 +19,7 @@ export default async function CollectionsDashboard() {
       .select("*")
       .order("created_at", { ascending: false });
 
-    if (!error && dbCollections) {
+    if (!error && dbCollections && dbCollections.length > 0) {
       collections = dbCollections.map((c) => ({
         id: c.id,
         name: c.name,
@@ -31,6 +31,44 @@ export default async function CollectionsDashboard() {
     }
   } catch (err) {
     console.error("Supabase collections error:", err);
+  }
+
+  // Fallback to initial collections if DB is empty
+  if (collections.length === 0) {
+    collections = [
+      {
+        id: "reframed",
+        name: "Reframed",
+        slug: "reframed",
+        status: "Active",
+        description: "Architectural silhouettes interwoven with signature cutdana embroidery.",
+        image: "/images/hero_reframed.jpg",
+      },
+      {
+        id: "capsule",
+        name: "Capsule Collection",
+        slug: "capsule-collection",
+        status: "Active",
+        description: "Contemporary pret sets and tailored separates designed for effortless elegance.",
+        image: "/images/rheia_skirt_set.jpg",
+      },
+      {
+        id: "runway",
+        name: "From The Runway",
+        slug: "from-the-runway",
+        status: "Active",
+        description: "Haute couture runway statement pieces with cascading drapes.",
+        image: "/images/emma_runway.jpg",
+      },
+      {
+        id: "everblooming",
+        name: "Everblooming Embroidery",
+        slug: "everblooming-embroidery",
+        status: "Active",
+        description: "Artisanal floral motifs handcrafted in raw silk and micro-tulle.",
+        image: "/images/amelia_lehenga.jpg",
+      },
+    ];
   }
 
   async function deleteCollectionAction(formData: FormData) {

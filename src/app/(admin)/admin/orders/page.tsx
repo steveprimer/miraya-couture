@@ -13,7 +13,7 @@ export default async function AdminOrdersPage() {
       .select("*")
       .order("created_at", { ascending: false });
 
-    if (!error && dbOrders) {
+    if (!error && dbOrders && dbOrders.length > 0) {
       orders = dbOrders.map((o) => ({
         id: o.id,
         orderNumber: o.id.substring(0, 8).toUpperCase(),
@@ -27,6 +27,52 @@ export default async function AdminOrdersPage() {
     }
   } catch (err) {
     console.error("Supabase orders error:", err);
+  }
+
+  // Fallback to initial orders if DB is empty
+  if (orders.length === 0) {
+    orders = [
+      {
+        id: "ord-1",
+        orderNumber: "MRY-9842",
+        createdAt: "2026-08-18T14:32:00Z",
+        customerName: "Ananya Birla",
+        customerEmail: "ananya.birla@luxury.in",
+        totalAmount: 325000,
+        paymentStatus: "Paid",
+        status: "Delivered",
+      },
+      {
+        id: "ord-2",
+        orderNumber: "MRY-9841",
+        createdAt: "2026-08-17T09:15:00Z",
+        customerName: "Natasha Poonawalla",
+        customerEmail: "natasha.p@serum.in",
+        totalAmount: 575000,
+        paymentStatus: "Paid",
+        status: "Processing",
+      },
+      {
+        id: "ord-3",
+        orderNumber: "MRY-9840",
+        createdAt: "2026-08-15T11:45:00Z",
+        customerName: "Rhea Kapoor",
+        customerEmail: "rhea.kapoor@studios.in",
+        totalAmount: 495000,
+        paymentStatus: "Paid",
+        status: "Shipped",
+      },
+      {
+        id: "ord-4",
+        orderNumber: "MRY-9839",
+        createdAt: "2026-08-19T16:20:00Z",
+        customerName: "Radhika Merchant",
+        customerEmail: "radhika.m@encore.in",
+        totalAmount: 245000,
+        paymentStatus: "Pending",
+        status: "Pending",
+      },
+    ];
   }
 
   return (
