@@ -14,10 +14,10 @@ export default function AdminLayout({
         <div className="hidden md:flex p-7 items-center justify-between border-b border-white/10">
           <Link
             href="/admin"
-            className="text-xl font-light tracking-[0.35em] uppercase text-white hover:opacity-80 transition-opacity"
+            className="text-xl font-light tracking-[0.35em] uppercase text-white hover:opacity-80 transition-opacity whitespace-nowrap inline-block select-none"
             style={{ fontFamily: "var(--font-serif)" }}
           >
-            M I S H R U<span className="text-[#C5A880]">.</span>
+            M I R A Y A<span className="text-[#C5A880]">.</span>
           </Link>
         </div>
 
@@ -29,10 +29,10 @@ export default function AdminLayout({
         {/* Mobile Header Bar matching Serene */}
         <div className="md:hidden flex items-center justify-between mb-6 pb-4 border-b border-[#E4E0D7]">
           <span
-            className="text-xl font-light tracking-[0.3em] uppercase text-[#121212]"
+            className="text-xl font-light tracking-[0.3em] uppercase text-[#121212] whitespace-nowrap inline-block select-none"
             style={{ fontFamily: "var(--font-serif)" }}
           >
-            M I S H R U<span className="text-[#7A1C30]">.</span>
+            M I R A Y A<span className="text-[#7A1C30]">.</span>
           </span>
           <Link
             href="/"
